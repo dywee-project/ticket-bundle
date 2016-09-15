@@ -1,0 +1,15 @@
+{# DyweeTicketBundle:Ticket:form.html.twig #}
+
+<div class="row">
+    <div class="col-md-6">
+        {{ form_start(form) }}
+
+        {{ form_row(form.category) }}
+
+        {{ form_row(form.title) }}
+
+        {{ form_widget(form.message) }}
+
+        {{ form_end(form) }}
+    </div>
+</div>

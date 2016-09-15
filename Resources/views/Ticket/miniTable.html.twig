@@ -1,0 +1,34 @@
+{# DyweeTicketBundle:Ticket:miniTable.html.twig #}
+
+{% if ticketList|length > 0 %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Sujet</th>
+                <th>Statut</th>
+                <th>Créé le</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in ticketList %}
+                <tr>
+                    <td>{{ ticket.id }}</td>
+                    <td><a href="{{ path('ticket_view', {id: ticket.id}) }}" title="Voir le ticket">{{ ticket.subject }}</a></td>
+                    <td>{{ ticket.state.label|raw }}</td>
+                    <td>{{ ticket.createdAt|date('d/m/Y à H\\hi') }}</td>
+                    <td>
+                        <a href="{{ path('ticket_view', {id: ticket.id}) }}" class="btn btn-default btn-xs" title="Voir le ticket"><i class="fa fa-eye"></i> </a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="box-body">
+        <p>Il n'y a pas encore de tickets créés</p>
+        <p><a href="{{ path('ticket_add') }}" class="btn btn-default"><i class="fa fa-plus"></i> Créer un ticket</a></p>
+    </div>
+{% endif %}

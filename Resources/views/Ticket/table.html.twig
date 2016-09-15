@@ -1,0 +1,23 @@
+{# DyweeTicketBundle:Ticket:table.html.twig #}
+
+{%  extends "DyweeTicketBundle::admin.html.twig" %}
+
+{% block title %}
+    Liste des tickets {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <a href="{{ path('ticket_add') }}" class="btn btn-default action-right"><i class="fa fa-plus"></i> Créer un ticket</a>
+    <div class="title-heading">
+        <h1>Liste des tickets de support</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                {% include "DyweeTicketBundle:Ticket:miniTable.html.twig" %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

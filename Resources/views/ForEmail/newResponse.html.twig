@@ -1,0 +1,16 @@
+{% extends('@DyweeTicket/ForEmail/template.html.twig') %}
+
+{% block title %}
+    Une réponse à un ticket a été posté
+{% endblock %}
+
+{% block body %}
+    <b>Message envoyé par {{ user.completeName }}</b>
+    <br>
+    Le {{ ticket.sendedAt|date("d-m-Y") }}
+    <br>
+    <br>
+    <b>Message :</b>
+    <br>
+    {{ ticket.content|raw }}
+{% endblock %}

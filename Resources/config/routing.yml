@@ -1,0 +1,51 @@
+##############################
+#           ADMIN            #
+##############################
+
+admin_ticket_dashboard:
+    path:     /admin6833/ticket/dashboard/{id}
+    defaults: { _controller: DyweeTicketBundle:Admin:dashboard, id:null }
+
+admin_ticket_view:
+    path:     /admin6833/ticket/{id}
+    defaults: { _controller: DyweeTicketBundle:Admin:view }
+    requirements:
+        id: \d+
+
+admin_ticket_table:
+    path:     /admin6833/ticket/table
+    defaults: { _controller: DyweeTicketBundle:Admin:table }
+
+admin_ticket_settings:
+    path:     /admin6833/ticket/settings
+    defaults: { _controller: DyweeTicketBundle:Admin:settings }
+
+##############################
+#          TICKET            #
+##############################
+
+ticket_view:
+    path:     /admin/ticket/{id}
+    defaults: { _controller: DyweeTicketBundle:Ticket:view }
+    requirements:
+        id: \d+
+
+ticket_add:
+    path:     /admin/ticket/add
+    defaults: { _controller: DyweeTicketBundle:Ticket:add }
+
+ticket_dashboard:
+    path:     /admin/ticket/table
+    defaults: { _controller: DyweeTicketBundle:Ticket:table }
+
+##############################
+#       TICKETCATEGORY       #
+##############################
+
+ticket_category_add:
+    path:     /admin/ticketCategory/add
+    defaults: { _controller: DyweeTicketBundle:TicketCategory:add }
+
+ticket_category_update:
+    path:     /admin/ticketCategory/{id}/update
+    defaults: { _controller: DyweeTicketBundle:TicketCategory:update }

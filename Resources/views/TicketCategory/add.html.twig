@@ -1,0 +1,20 @@
+{# DyweeTicketBundle:TicketCategory:edit.html.twig #}
+
+{%  extends "DyweeTicketBundle::admin.html.twig" %}
+
+{% block title %}
+    Ajout d'une catégorie de ticket {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-6">
+        <div class="box">
+            <div class="box-header with-border">
+                <h2 class="box-title">Ajout d'une catégorie de ticket</h2>
+            </div>
+            <div class="box-body">
+                {% include "DyweeTicketBundle:TicketCategory:form.html.twig" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

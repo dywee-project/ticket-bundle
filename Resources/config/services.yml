@@ -1,0 +1,18 @@
+services:
+    dywee_ticket.ticket_category.admin:
+        class: Dywee\TicketBundle\Admin\TicketCategoryAdmin
+        arguments: [~, Dywee\TicketBundle\Entity\TicketCategory, ~]
+        tags:
+            - { name: sonata.admin, group: Ticket, manager_type: orm, label: Ticket Category }
+
+    dywee_ticket.ticket.admin:
+        class: Dywee\TicketBundle\Admin\TicketAdmin
+        arguments: [~, Dywee\TicketBundle\Entity\Ticket, ~]
+        tags:
+            - { name: sonata.admin, group: Ticket, manager_type: orm, label: Ticket }
+
+    dywee_ticket.ticket_message.admin:
+        class: Dywee\TicketBundle\Admin\TicketMessageAdmin
+        arguments: [~, Dywee\TicketBundle\Entity\TicketMessage, ~]
+        tags:
+            - { name: sonata.admin, group: Ticket, manager_type: orm, label: Ticket Message }

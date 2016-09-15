@@ -1,0 +1,19 @@
+{% extends 'DyweeTicketBundle::admin.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <div class="box-header">
+                    <h2 class="box-title">
+                        Catégories
+                    </h2>
+                    <div class="box-tools">
+                        <a href="{{ path('ticket_category_add') }}" class="btn btn-default btn-box-tool"><i class="fa fa-plus"></i> Ajouter</a>
+                    </div>
+                </div>
+                {{ render(controller('DyweeTicketBundle:TicketCategory:miniTable')) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

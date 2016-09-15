@@ -1,0 +1,15 @@
+{# DyweeTicketBundle:Ticket:add.html.twig #}
+
+{%  extends "DyweeTicketBundle::admin.html.twig" %}
+
+{% block title %}
+    Création d'un ticket {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="title-heading">
+        <h1>Création d'un ticket</h1>
+    </div>
+
+    {% include "DyweeTicketBundle:Ticket:userForm.html.twig" %}
+{% endblock %}

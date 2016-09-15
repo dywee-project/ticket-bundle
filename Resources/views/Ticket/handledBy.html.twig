@@ -1,0 +1,5 @@
+{% if ticket.handledBy is not null %}
+    {{ ticket.handledBy.completeName }}
+{% else %}
+    Non attribué
+{% endif %}

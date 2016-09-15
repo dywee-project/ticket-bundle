@@ -1,0 +1,75 @@
+{# DyweeTicketBundle:SuperAdmin:ticket_view.html.twig #}
+
+{%  extends "DyweeTicketBundle::admin.html.twig" %}
+
+{% block title %}
+    Aperçu d'un ticket {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="title-heading">
+        <div class="pull-right">
+            <a href="{{ path('admin_ticket_dashboard') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> Retour à la liste des tickets</a>
+        </div>
+        <h1>Aperçu d'un ticket</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h2 class="box-title">{{ ticket.subject }}</h2>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        {% for message in ticket.messages %}
+                            {% include 'DyweeTicketBundle:TicketMessage:view.html.twig' %}
+                        {% endfor %}
+                    </div>
+                    <div class="well">
+                        {{ form_start(messageForm) }}
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                {{ form_widget(messageForm.content) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-success btn-block">Répondre</button>
+                            </div>
+                        </div>
+                        {{ form_end(messageForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Infos</h2>
+                </div>
+                <div class="box-body">
+                    {{ form(ticketForm) }}
+                </div>
+                {#<table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>Catégorie</th>
+                            <td>{{ ticket.category.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Statut</th>
+                            <td>{{ ticket.state.label|raw }}</td>
+                        </tr>
+                        <tr>
+                            <th>Attribué à</th>
+                            <td>{% include 'DyweeTicketBundle:Ticket:handledBy.html.twig' %}</td>
+                        </tr>
+                    </tbody>
+                </table>#}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

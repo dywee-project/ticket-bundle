@@ -1,0 +1,22 @@
+{# DyweeTicketBundle:Ticket:ticket_table.html.twig #}
+
+{%  extends "DyweeTicketBundle::admin.html.twig" %}
+
+{% block title %}
+    Liste des tickets {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="title-heading">
+        <h1>Liste des tickets de support</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-default">
+                {% include "DyweeTicketBundle:Admin:miniTable.html.twig" %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

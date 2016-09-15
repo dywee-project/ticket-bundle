@@ -1,0 +1,22 @@
+{# DyweeTicketBundle:SuperAdmin:dashboard.html.twig #}
+
+{% extends 'DyweeTicketBundle::admin.html.twig' %}
+
+{% block body %}
+    {% if categories is defined and categories|length > 0 %}
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-md-6 col-xs-12">
+                    <div class="box box-default">
+                        <div class="box-header"><h3 class="box-title">{{ category.name }}</h3></div>
+                        {{ render(controller('DyweeTicketBundle:Admin:table', {id: category.id, display: 'mini'})) }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% elseif ticketList is defined and ticketList|length > 0 %}
+        {% include 'DyweeTicketBundle:Ticket:miniTable.html.twig' %}
+    {% else %}
+        <p>Aucun ticket à afficher</p>
+    {% endif %}
+{% endblock %}

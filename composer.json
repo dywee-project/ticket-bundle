@@ -1,0 +1,23 @@
+{
+  "name": "dywee/ticket-bundle",
+  "type": "symfony-bundle",
+  "description": "Symfony3 bundle for easy management of support system",
+  "keywords": ["ticket, support"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Olivier Delbruyère",
+      "email": "olivier.delbruyere@hotmail.com",
+      "homepage": "http://dywee.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dywee\\TicketBundle\\": ""
+    }
+  }
+}
