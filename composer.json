@@ -2,7 +2,7 @@
   "name": "dywee/ticket-bundle",
   "type": "symfony-bundle",
   "description": "Symfony3 bundle for easy management of support system",
-  "keywords": ["ticket, support"],
+  "keywords": ["ticket"],
   "license": "MIT",
   "authors": [
     {
@@ -13,7 +13,7 @@
     }
   ],
   "require": {
-    "php": ">=7.0.0"
+    "php": ">=5.3.0"
   },
   "autoload": {
     "psr-4": {

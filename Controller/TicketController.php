@@ -49,34 +49,28 @@ class TicketController extends Controller
         $ticketMessage->setTicket($ticket);
         $ticketMessage->setSendedBy($this->getUser());
 
-        $ticketForm = $this->get('form.factory')->createBuilder(TicketType::class, $ticket)->getForm();
         $ticketMessageForm = $this->get('form.factory')->createBuilder(TicketMessageType::class, $ticketMessage)->getForm();
 
         if($ticketMessageForm->handleRequest($request)->isValid())
         {
 
+
+            /*
             $this->sendMail('Nouvelle réponse à un ticket', $this->renderView('DyweeTicketBundle:ForEmail:newResponse.html.twig', [
                 "user" => $this->getUser(),
                 "ticket" => $ticketMessage
             ]));
+            */
 
             $em->persist($ticketMessage);
             $em->flush();
 
             $ticketMessage = clone $ticketMessage;
             $ticketMessage->setContent('');
-            $ticketForm = $this->get('form.factory')->createBuilder(TicketType::class, $ticket)->getForm();
-        }
-
-        if($ticketForm->handleRequest($request)->isValid())
-        {
-            $em->persist($ticket);
-            $em->flush();
         }
 
         return $this->render('DyweeTicketBundle:Ticket:view.html.twig', array(
             'ticket' => $ticket,
-            'ticketForm' => $ticketForm->createView(),
             'messageForm' => $ticketMessageForm->createView()
         ));
     }
@@ -96,6 +90,7 @@ class TicketController extends Controller
             $em->persist($ticket);
             $em->flush();
 
+            /*
             $this->sendMail(
                 'Nouveau ticket posté',
                 $this->renderView('DyweeTicketBundle:ForEmail:newTicket.html.twig', [
@@ -103,6 +98,7 @@ class TicketController extends Controller
                     "ticket" => $ticket,
                 ])
             );
+            */
 
             $request->getSession()->getFlashBag()->set('success', 'Ticket créé, nous allons le traiter au plus vite');
 
