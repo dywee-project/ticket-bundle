@@ -2,7 +2,7 @@
 
 namespace Dywee\TicketBundle\Controller;
 
-class ParentController extends \CoreBundle\Controller\ParentController
+class ParentController extends \Dywee\CoreBundle\Controller\ParentController
 {
     protected $bundleName = 'Dywee\TicketBundle';
 }

@@ -15,6 +15,7 @@ use UserBundle\Entity\User;
 class TicketController extends Controller
 {
     public function sendMail($subject, $html){
+        //todo abstract this
         $message = \Swift_Message::newInstance()
             ->setSubject('AcaWeb - '.$subject)
             ->setFrom('contact@acaweb.be')
