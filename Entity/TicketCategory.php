@@ -219,11 +219,11 @@ class TicketCategory
     /**
      * Set parent
      *
-     * @param \Dywee\TicketBundle\Entity\TicketCategory $parent
+     * @param TicketCategory $parent
      *
      * @return TicketCategory
      */
-    public function setParent(\Dywee\TicketBundle\Entity\TicketCategory $parent = null)
+    public function setParent(TicketCategory $parent = null)
     {
         $this->parent = $parent;
 
@@ -233,7 +233,7 @@ class TicketCategory
     /**
      * Get parent
      *
-     * @return \Dywee\TicketBundle\Entity\TicketCategory
+     * @return TicketCategory
      */
     public function getParent()
     {
@@ -243,11 +243,11 @@ class TicketCategory
     /**
      * Add child
      *
-     * @param \Dywee\TicketBundle\Entity\CourseDegree $child
+     * @param CourseDegree $child
      *
      * @return TicketCategory
      */
-    public function addChild(\Dywee\TicketBundle\Entity\TicketCategory $child)
+    public function addChild(TicketCategory $child)
     {
         $this->children[] = $child;
 
@@ -257,9 +257,9 @@ class TicketCategory
     /**
      * Remove child
      *
-     * @param \Dywee\TicketBundle\Entity\TicketCategory $child
+     * @param TicketCategory $child
      */
-    public function removeChild(\Dywee\TicketBundle\Entity\TicketCategory $child)
+    public function removeChild(TicketCategory $child)
     {
         $this->children->removeElement($child);
     }
@@ -277,11 +277,11 @@ class TicketCategory
     /**
      * Add ticket
      *
-     * @param \Dywee\TicketBundle\Entity\Ticket $ticket
+     * @param Ticket $ticket
      *
      * @return TicketCategory
      */
-    public function addTicket(\Dywee\TicketBundle\Entity\Ticket $ticket)
+    public function addTicket(Ticket $ticket)
     {
         $this->tickets[] = $ticket;
         $ticket->setCategory($this);
@@ -292,9 +292,9 @@ class TicketCategory
     /**
      * Remove ticket
      *
-     * @param \Dywee\TicketBundle\Entity\Ticket $ticket
+     * @param Ticket $ticket
      */
-    public function removeTicket(\Dywee\TicketBundle\Entity\Ticket $ticket)
+    public function removeTicket(Ticket $ticket)
     {
         $this->tickets->removeElement($ticket);
     }

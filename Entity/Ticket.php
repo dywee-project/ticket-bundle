@@ -296,11 +296,11 @@ class Ticket
     /**
      * Add ticketMessage
      *
-     * @param \Dywee\TicketBundle\Entity\TicketMessage $ticketMessage
+     * @param TicketMessage $ticketMessage
      *
      * @return Ticket
      */
-    public function addTicketMessage(\Dywee\TicketBundle\Entity\TicketMessage $ticketMessage)
+    public function addTicketMessage(TicketMessage $ticketMessage)
     {
         $this->ticketMessages[] = $ticketMessage;
         $ticketMessage->setTicket($this);
@@ -311,9 +311,9 @@ class Ticket
     /**
      * Remove ticketMessage
      *
-     * @param \Dywee\TicketBundle\Entity\TicketMessage $ticketMessage
+     * @param TicketMessage $ticketMessage
      */
-    public function removeTicketMessage(\Dywee\TicketBundle\Entity\TicketMessage $ticketMessage)
+    public function removeTicketMessage(TicketMessage $ticketMessage)
     {
         $this->ticketMessages->removeElement($ticketMessage);
     }
@@ -351,11 +351,11 @@ class Ticket
     /**
      * Set category
      *
-     * @param \Dywee\TicketBundle\Entity\TicketCategory $category
+     * @param TicketCategory $category
      *
      * @return Ticket
      */
-    public function setCategory(\Dywee\TicketBundle\Entity\TicketCategory $category = null)
+    public function setCategory(TicketCategory $category = null)
     {
         $this->category = $category;
 
@@ -365,7 +365,7 @@ class Ticket
     /**
      * Get category
      *
-     * @return \Dywee\TicketBundle\Entity\TicketCategory
+     * @return TicketCategory
      */
     public function getCategory()
     {
@@ -375,11 +375,11 @@ class Ticket
     /**
      * Set state
      *
-     * @param \Dywee\TicketBundle\Entity\TicketState $state
+     * @param TicketState $state
      *
      * @return Ticket
      */
-    public function setState(\Dywee\TicketBundle\Entity\TicketState $state = null)
+    public function setState(TicketState $state = null)
     {
         $this->state = $state;
 
@@ -389,7 +389,7 @@ class Ticket
     /**
      * Get state
      *
-     * @return \Dywee\TicketBundle\Entity\TicketState
+     * @return TicketState
      */
     public function getState()
     {

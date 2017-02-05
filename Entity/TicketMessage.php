@@ -126,11 +126,11 @@ class TicketMessage
     /**
      * Set ticket
      *
-     * @param \Dywee\TicketBundle\Entity\Ticket $ticket
+     * @param Ticket $ticket
      *
      * @return TicketMessage
      */
-    public function setTicket(\Dywee\TicketBundle\Entity\Ticket $ticket = null)
+    public function setTicket(Ticket $ticket = null)
     {
         $this->ticket = $ticket;
 
@@ -140,7 +140,7 @@ class TicketMessage
     /**
      * Get ticket
      *
-     * @return \Dywee\TicketBundle\Entity\Ticket
+     * @return Ticket
      */
     public function getTicket()
     {
