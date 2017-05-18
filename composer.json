@@ -1,5 +1,5 @@
 {
-  "name": "olix21/ticket-bundle",
+  "name": "dywee/ticket-bundle",
   "type": "symfony-bundle",
   "description": "Symfony3 bundle for easy management of support system",
   "keywords": ["ticket"],
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Olix21\\TicketBundle\\": ""
+      "Dywee\\TicketBundle\\": ""
     }
   }
 }
