@@ -14,11 +14,16 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "dywee/core-bundle": "^0.1"
+    "dywee/core-bundle": "0.1-dev"
   },
   "autoload": {
     "psr-4": {
       "Dywee\\TicketBundle\\": ""
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1-dev"
     }
   }
 }
